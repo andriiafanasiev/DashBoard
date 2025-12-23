@@ -1,5 +1,12 @@
+import Login from './pages/Login';
+import useAuth from './hooks/useAuth';
+
 function App() {
-    return <></>;
+    const { isAuthenticated } = useAuth();
+    if (!isAuthenticated) {
+        return <Login />;
+    }
+    return <div>Dashboard</div>;
 }
 
 export default App;
